@@ -38,7 +38,12 @@ function ydmb_metabox_callback() {
 	$post_meta = get_metadata( 'post', $post->ID );
 	echo '<pre style="overflow: auto;word-wrap: break-word;">';
 	foreach ( $post_meta as $key => $value ) {
-		echo $key . ' => ' . $value[0] . "\n";
+		if ( is_serialized( $value[0] ) ) {
+			echo $key . '=> ';
+			var_dump( unserialize( $value[0] ) );
+		} else {
+			echo $key . ' => ' . $value[0] . "\n";
+		}
 	}
 	echo '</pre>';
 	echo '</div>';
