@@ -23,7 +23,7 @@ function ydmb_register_meta_boxes() {
 	}
 
 	foreach ( $post_types as $post_type ) {
-		add_meta_box( 'ydmb_meta', 'Yo Dawg, I heard you like post meta, so I put your post meta in a registerd metabox', 'ydmb_metabox_callback', $post_type, 'normal', 'low' );
+		add_meta_box( 'ydmb_meta', 'Yo Dawg, I heard you like post meta, so I put your post meta in a registered metabox', 'ydmb_metabox_callback', $post_type, 'normal', 'low' );
 	}
 }
 add_action( 'add_meta_boxes', 'ydmb_register_meta_boxes', 10 );
